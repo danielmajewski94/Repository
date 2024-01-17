@@ -79,3 +79,38 @@ footer {
     align-content: start;
     text-align: left;
 }
+
+/*
+*/
+
+/* CSS-Stil für die Sterne */
+.star-rating {
+    display: inline-block;
+    font-size: 0;
+    /* Entfernt den Leerraum zwischen den Sternen */
+}
+
+.star-rating input {
+    display: none;
+    /* Verstecke die Standard-Ranges */
+}
+
+.star-rating label {
+    font-size: 24px;
+    /* Größe der Sterne anpassen */
+    padding: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.star-rating label:before {
+    content: '\2605';
+    /* Unicode-Zeichen für Stern */
+    color: #ddd;
+    /* Standardfarbe der Sterne */
+}
+
+.star-rating input:checked+label:before {
+    color: #f90;
+    /* Farbe der ausgewählten Sterne */
+}
