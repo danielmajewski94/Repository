@@ -1,0 +1,45 @@
+header {
+    background-color: red;
+}
+
+main {
+    background-color: blue;
+    flex: 1;
+}
+
+footer {
+    background-color: green;
+    color: #fff;
+    /* Textfarbe des Footers anpassen */
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    /* Drei Spalten: eine Fraktion, zwei Fraktionen, eine Fraktion */
+    grid-template-rows: auto;
+    /* Automatische Höhe für die Zeilen */
+    gap: 20px;
+    /* Abstand zwischen den Zellen */
+    padding: 20px;
+}
+
+header,
+footer {
+    grid-column: span 3;
+    /* Spanne über alle drei Spalten */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
