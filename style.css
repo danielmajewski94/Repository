@@ -48,3 +48,12 @@ footer {
     width: 100pt;
     height: 100%;
 }
+
+#Kurzbeschreibung {
+    align-content: end;
+    text-align: right;
+}
+
+#Portraitimage {
+    align-content: start;
+}
