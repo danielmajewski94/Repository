@@ -35,7 +35,14 @@ body {
     padding: 20px;
 }
 
-header,
+header {
+    grid-column: span 3;
+    /* Spanne über alle drei Spalten */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
 footer {
     grid-column: span 3;
     /* Spanne über alle drei Spalten */
@@ -56,4 +63,19 @@ footer {
 
 #Portraitimage {
     align-content: start;
+}
+
+.Icon {
+    width: 30pt;
+    height: 30pt;
+}
+
+#Adresse {
+    align-content: end;
+    text-align: right;
+}
+
+#Mail {
+    align-content: start;
+    text-align: left;
 }
