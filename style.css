@@ -7,14 +7,26 @@ iframe {
     flex: 1;
 }
 
+h1 {
+    font-size: 30pt;
+}
+
+h3 {
+    font-size: 20pt;
+}
+
 footer {
-    background-color: rgb(211, 209, 209);
     color: #fff;
     /* Textfarbe des Footers anpassen */
     padding: 20px;
     text-align: center;
     position: sticky;
     bottom: 0;
+    grid-column: span 3;
+    /* Spanne über alle drei Spalten */
+    color: black;
+    padding: 10px;
+    text-align: center;
 }
 
 body {
@@ -35,15 +47,11 @@ body {
     padding: 20px;
 }
 
-header {
-    grid-column: span 3;
-    /* Spanne über alle drei Spalten */
-    color: black;
-    padding: 10px;
-    text-align: center;
+.cell-2 {
+    grid-row: span 2;
 }
 
-footer {
+header {
     grid-column: span 3;
     /* Spanne über alle drei Spalten */
     color: black;
@@ -105,7 +113,7 @@ footer {
 
 .navbar-menu li {
     margin-right: 20px;
-    font-size: 16pt;
+    font-size: 24pt;
 }
 
 .navbar-menu a {
@@ -131,6 +139,7 @@ footer {
 /* CSS-Stil für die Sterne */
 .star-rating {
     font-size: 0;
+    white-space: nowrap;
     /* Entfernt den Leerraum zwischen den Sternen */
 }
 
@@ -208,10 +217,49 @@ footer {
     .navbar-menu li {
         margin-right: 0;
         margin-bottom: 10px;
-        font-size: 16pt;
+        font-size: 20pt;
     }
 
     .navbar-toggle {
         display: block;
     }
+
+    h1 {
+        font-size: 20pt;
+    }
+
+    h3 {
+        font-size: 15pt;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* Drei Spalten: eine Fraktion, zwei Fraktionen, eine Fraktion */
+        grid-template-rows: auto;
+        /* Automatische Höhe für die Zeilen */
+        gap: 20px;
+        /* Abstand zwischen den Zellen */
+        padding: 20px;
+    }
+
+    header {
+        grid-column: span 1;
+        /* Spanne über alle drei Spalten */
+        color: black;
+        padding: 10px;
+        text-align: center;
+    }
+
+    footer {
+        grid-column: span 1;
+        /* Spanne über alle drei Spalten */
+        color: black;
+        padding: 10px;
+        text-align: center;
+    }
+
 }
