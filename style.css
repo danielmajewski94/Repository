@@ -107,7 +107,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    color: white;
+    /*color: white;*/
+    font-size: 20pt;
     justify-content: center;
 }
 
@@ -129,7 +130,8 @@ header {
 
 .navbar-menu a {
     text-decoration: none;
-    color: white;
+    /*color: white;*/
+    font-size: 20pt;
     font-size: 18px;
 }
 
