@@ -2,8 +2,8 @@ header {
     background-color: red;
 }
 
-main {
-    background-color: blue;
+iframe {
+    border-radius: 0%;
     flex: 1;
 }
 
