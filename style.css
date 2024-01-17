@@ -43,3 +43,8 @@ footer {
     padding: 10px;
     text-align: center;
 }
+
+#Portrait {
+    width: 100pt;
+    height: 100%;
+}
