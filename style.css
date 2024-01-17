@@ -1,5 +1,5 @@
 header {
-    background-color: red;
+    background-color: rgb(211, 209, 209);
 }
 
 iframe {
@@ -8,7 +8,7 @@ iframe {
 }
 
 footer {
-    background-color: green;
+    background-color: rgb(211, 209, 209);
     color: #fff;
     /* Textfarbe des Footers anpassen */
     padding: 20px;
@@ -38,7 +38,7 @@ body {
 header {
     grid-column: span 3;
     /* Spanne über alle drei Spalten */
-    color: #fff;
+    color: black;
     padding: 10px;
     text-align: center;
 }
@@ -46,7 +46,7 @@ header {
 footer {
     grid-column: span 3;
     /* Spanne über alle drei Spalten */
-    color: #fff;
+    color: black;
     padding: 10px;
     text-align: center;
 }
@@ -82,14 +82,45 @@ footer {
 
 /*Navigation*/
 /* CSS-Stil für die nebeneinander angeordnete Liste */
-.horizontal-list {
+.navbar {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    color: white;
     justify-content: center;
 }
+
+.navbar-logo {
+    font-size: 24px;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+    font-size: 16pt;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.navbar-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+/*Ende Navigation*/
 
 .horizontal-list li {
     margin-right: 100px;
@@ -124,4 +155,63 @@ footer {
 .star-rating label.checked:before {
     color: #f90;
     /* Farbe der ausgewählten Sterne */
+}
+
+
+/*Bildschirmkompatibilität*/
+
+@media screen and (max-width: 740px) {
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        /* Drei Spalten: eine Fraktion, zwei Fraktionen, eine Fraktion */
+        grid-template-rows: auto;
+        /* Automatische Höhe für die Zeilen */
+        gap: 20px;
+        /* Abstand zwischen den Zellen */
+        padding: 20px;
+    }
+
+    header {
+        grid-column: span 2;
+        /* Spanne über alle drei Spalten */
+        color: black;
+        padding: 10px;
+        text-align: center;
+    }
+
+    footer {
+        grid-column: span 2;
+        /* Spanne über alle drei Spalten */
+        color: black;
+        padding: 10px;
+        text-align: center;
+    }
+
+
+    /*Hamburger-Icon*/
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .navbar-menu.show {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 16pt;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
 }
