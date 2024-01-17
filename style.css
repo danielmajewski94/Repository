@@ -1,5 +1,5 @@
 header {
-    background-color: rgb(211, 209, 209);
+    background-color: rgb(243, 243, 243);
 }
 
 iframe {
@@ -132,7 +132,6 @@ header {
     text-decoration: none;
     /*color: white;*/
     font-size: 20pt;
-    font-size: 18px;
 }
 
 .navbar-toggle {
@@ -257,6 +256,15 @@ header {
         gap: 20px;
         /* Abstand zwischen den Zellen */
         padding: 20px;
+    }
+
+    /* Beispiel: Verbindung von Zellen */
+    .cell-1 {
+        grid-column: span 1;
+    }
+
+    .cell-2 {
+        grid-row: span 1;
     }
 
     header {
