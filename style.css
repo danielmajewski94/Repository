@@ -38,13 +38,23 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     /* Drei Spalten: eine Fraktion, zwei Fraktionen, eine Fraktion */
-    grid-template-rows: auto;
+    grid-template-rows: repeat(2, auto);
     /* Automatische Höhe für die Zeilen */
     gap: 20px;
     /* Abstand zwischen den Zellen */
     padding: 20px;
+}
+
+.cell {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Beispiel: Verbindung von Zellen */
+.cell-1 {
+    grid-column: span 2;
 }
 
 .cell-2 {
@@ -60,13 +70,14 @@ header {
 }
 
 #Portrait {
-    width: 100pt;
+    width: 150pt;
     height: 100%;
+    display: block;
 }
 
 #Kurzbeschreibung {
     align-content: end;
-    text-align: right;
+    text-align: center;
 }
 
 #Portraitimage {
