@@ -33,6 +33,7 @@ function ChangeFrame(Datei) {
     document.getElementById('ContentFrame').src = Datei;
 }
 
+/*
 function openModal() {
     var modal = document.getElementById('myModal');
     modal.style.display = 'block';
@@ -54,4 +55,4 @@ document.addEventListener('DOMContentLoaded', function () {
             openModal();
         });
     }
-});
+});*/
