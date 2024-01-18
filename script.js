@@ -32,3 +32,26 @@ function ChangeFrame(Datei) {
     console.log(Datei);
     document.getElementById('ContentFrame').src = Datei;
 }
+
+function openModal() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    var table = document.getElementById('myTable');
+    var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+    for (var i = 0; i < rows.length; i++) {
+        rows[i].addEventListener('click', function () {
+            var Modal_Textinhalt = document.getElementById('Modal_Textinhalt');
+            Modal_Textinhalt.innerHTML = "<h1>Hallo</h1>";
+            openModal();
+        });
+    }
+});
