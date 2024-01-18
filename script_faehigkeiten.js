@@ -56,26 +56,12 @@ function createTable() {
 
     Table_Hobbies += '</tbody></table>';
 
-    console.log(Table_Design);
-
     // Tabelle mit innerHTML setzen
     document.getElementById('DIV_Table_Informatik').innerHTML = Table_Informatik;
     document.getElementById('DIV_Table_Design').innerHTML = Table_Design;
     document.getElementById('DIV_Table_Hobbies').innerHTML = Table_Hobbies;
 
-    // EventListener für Zeilen hinzufügen
-    var tbody = document.getElementById('Table_Informatik').getElementsByTagName('tbody')[0];
-    tbody.onclick = function (event) {
-        var target = event.target;
-        while (target && target.tagName !== 'TR') {
-            target = target.parentNode;
-        }
-
-        if (target) {
-            var index = target.rowIndex; // Der Header wird nicht gezählt
-            alert('Name: ' + temp_list_Informatik[index].name + ', Sterne: ' + temp_list_Informatik[index].stars);
-        }
-    };
+    addClickListenerToTableRows();
 }
 
 function TabelleninhaltFuellen(Tabelle, temp_list, tablename) {
@@ -102,4 +88,24 @@ function TabelleninhaltFuellen(Tabelle, temp_list, tablename) {
 
 }
 
-document.addEventListener('DOMContentLoaded', createTable);
+function addClickListenerToTableRows() {
+    var tbody = document.getElementById('Table_Informatik').getElementsByTagName('tbody')[0];
+
+    if (tbody) {
+        tbody.addEventListener('click', function (event) {
+            var target = event.target;
+            while (target && target.tagName !== 'TR') {
+                target = target.parentNode;
+            }
+
+            if (target) {
+                var index = target.rowIndex; // Der Header wird nicht gezählt
+                alert('Name: ' + temp_list_Informatik[index].name + ', Sterne: ' + temp_list_Informatik[index].stars);
+            }
+        });
+    } else {
+        console.error('tbody-Element nicht gefunden.');
+    }
+}
+
+createTable();

@@ -29,7 +29,6 @@ function handleMediaChange() {
 mediaQuery.addListener(handleMediaChange);
 
 function ChangeFrame(Datei) {
-    console.log(Datei);
     document.getElementById('ContentFrame').src = Datei;
 }
 
