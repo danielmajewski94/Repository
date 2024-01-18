@@ -63,7 +63,6 @@ body {
 }
 
 .cell {
-    border: 1px solid #ccc;
     padding: 5px;
 }
 
@@ -195,6 +194,25 @@ header {
     color: #f90;
     /* Farbe der ausgewählten Sterne */
 }
+
+
+.image_study {
+    width: 60%;
+    height: 40%;
+    object-fit: fill;
+}
+
+.image_study_2 {
+    width: 40%;
+    height: 30%;
+    object-fit: fill;
+}
+
+.border {
+    border: 1px solid #ccc;
+}
+
+
 
 
 /*Bildschirmkompatibilität*/
