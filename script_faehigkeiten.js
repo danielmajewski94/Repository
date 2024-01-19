@@ -61,7 +61,7 @@ function createTable() {
     document.getElementById('DIV_Table_Design').innerHTML = Table_Design;
     document.getElementById('DIV_Table_Hobbies').innerHTML = Table_Hobbies;
 
-    addClickListenerToTableRows();
+    //addClickListenerToTableRows();
 }
 
 function TabelleninhaltFuellen(Tabelle, temp_list, tablename) {
@@ -88,7 +88,7 @@ function TabelleninhaltFuellen(Tabelle, temp_list, tablename) {
 
 }
 
-function addClickListenerToTableRows() {
+/*function addClickListenerToTableRows() {
     var tbody = document.getElementById('Table_Informatik').getElementsByTagName('tbody')[0];
 
     if (tbody) {
@@ -106,6 +106,6 @@ function addClickListenerToTableRows() {
     } else {
         console.error('tbody-Element nicht gefunden.');
     }
-}
+}*/
 
 createTable();
