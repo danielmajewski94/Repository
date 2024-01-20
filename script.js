@@ -1,57 +1,41 @@
+// Diese Funktion wird ausgeführt, wenn das DOM vollständig geladen ist.
 document.addEventListener('DOMContentLoaded', function () {
+    // Sucht das Toggle-Button-Element und das Menü-Element in der Navbar.
     const toggleButton = document.querySelector('.navbar-toggle');
     const menu = document.querySelector('.navbar-menu');
 
+    // Fügt einen Event-Listener hinzu, der das Menü beim Klicken auf den Toggle-Button ein- oder ausblendet.
     toggleButton.addEventListener('click', function () {
         menu.classList.toggle('show');
     });
 });
 
+// Erstellt ein Media Query-Objekt für Bildschirmbreiten bis 450px.
 var mediaQuery = window.matchMedia("(max-width: 450px)");
 
+// Diese Funktion wird aufgerufen, wenn sich die Bildschirmbreite ändert.
 function handleMediaChange() {
-
-    //const Portraitimage = document.getElementById('Portraitimage');
+    // Holt sich die DOM-Elemente für das Mail und Adresse Element.
     const Mail = document.getElementById('Mail');
     const Adresse = document.getElementById('Adresse');
 
+    // Überprüft, ob die Bildschirmbreite kleiner als oder gleich 450px ist.
     if (mediaQuery.matches) {
-        //Portraitimage.style.display = "none";
+        // Versteckt die Elemente bei kleineren Bildschirmbreiten.
         Mail.style.display = "none";
         Adresse.style.display = "none";
     } else {
-        //Portraitimage.style.display = "inline";
+        // Zeigt die Elemente bei größeren Bildschirmbreiten an.
         Mail.style.display = "inline";
         Adresse.style.display = "inline";
     }
 }
 
+// Fügt einen Listener hinzu, um auf Änderungen der Bildschirmbreite zu reagieren.
 mediaQuery.addListener(handleMediaChange);
 
+// Diese Funktion ändert die Quelle des ContentFrames auf die übergebene Datei.
 function ChangeFrame(Datei) {
     document.getElementById('ContentFrame').src = Datei;
 }
-
-/*
-function openModal() {
-    var modal = document.getElementById('myModal');
-    modal.style.display = 'block';
-}
-
-function closeModal() {
-    var modal = document.getElementById('myModal');
-    modal.style.display = 'none';
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    var table = document.getElementById('myTable');
-    var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
-
-    for (var i = 0; i < rows.length; i++) {
-        rows[i].addEventListener('click', function () {
-            var Modal_Textinhalt = document.getElementById('Modal_Textinhalt');
-            Modal_Textinhalt.innerHTML = "<h1>Hallo</h1>";
-            openModal();
-        });
-    }
-});*/
+/* */

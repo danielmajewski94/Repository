@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
+    <!-- Codierung der HTML-Datei in UTF-8 -->
     <meta charset="UTF-8">
+    <!--
+        viewport-Meta-Tag: Die Darstellung und das Verhalten der Webseite auf verschiedenen Geräten zu steuern, insbesondere auf mobilen Geräten.
+        width=device-width: Breite des Viewports wird auf die Breite des Geräts eingestellt.
+        initial-scale=1.0: Legt den initialen Zoom-Faktor der Webseite fest. Wert 1.0 bedeutet Standardgröße.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lebenslauf</title>
+    <!-- Verknüpfung der CSS-Datei -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,7 +19,9 @@
     <div class="Ausbildung">
         <h3>Schulabschlüsse</h3>
     </div>
+    <!-- GridLayout wird definiert -->
     <div class="grid-container">
+        <!-- Eine Zelle im GridLayout mit einen Rahmen. Inhalt: Ein Text in einer section und ein zugehöriges Bild mit einer Überschrift in <h4>. Der Text in der section wird durch style="text-align: center; zentriert. Die Beschreibung trifft auf alle Zellen zu. -->
         <div class="cell">
             <section style="text-align: center;">
                 <img src="Image/book.jpg" alt="" class="image_study">
@@ -58,6 +67,7 @@
         </div>
     </div>
 
+    <!-- Aufruf der JavaScript-Datei script.js -->
     <script src="script.js"></script>
 </body>
 

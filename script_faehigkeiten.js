@@ -1,3 +1,4 @@
+// Definition einer Liste von Fähigkeiten mit entsprechenden Eigenschaften
 var faehigkeiten = [
     { id: 1, name: 'Java', stars: 4, Text: "", Kategorie: "Informatik" },
     { id: 1, name: 'ABAP', stars: 1, Text: "", Kategorie: "Informatik" },
@@ -19,58 +20,56 @@ var faehigkeiten = [
     { id: 1, name: 'Sport', stars: 1, Text: "", Kategorie: "Hobbies" },
 ];
 
-
+// Funktion zum Erstellen von Tabellen basierend auf den Fähigkeiten-Kategorien
 function createTable() {
 
+    // Temporäre Listen für jede Kategorie
     var temp_list_Informatik = [];
     var temp_list_Design = [];
     var temp_list_Hobbies = [];
 
+    // Tabelle für die Kategorie "Informatik" erstellen
     var Table_Informatik = '<table id="Table_Informatik">';
     Table_Informatik += '<tbody>';
-
     var rückgabewerte = TabelleninhaltFuellen(Table_Informatik, temp_list_Informatik, 'Informatik');
-
     Table_Informatik += rückgabewerte[0];
     temp_list_Informatik = rückgabewerte[1];
-
     Table_Informatik += '</tbody></table>';
 
+    // Tabelle für die Kategorie "Design" erstellen
     var Table_Design = '<table id="Table_Design">';
     Table_Design += '<tbody>';
-
     var rückgabewerte = TabelleninhaltFuellen(Table_Design, temp_list_Design, 'Design');
-
     Table_Design += rückgabewerte[0];
     temp_list_Design = rückgabewerte[1];
-
     Table_Design += '</tbody></table>';
 
+    // Tabelle für die Kategorie "Hobbies" erstellen
     var Table_Hobbies = '<table id="Table_Hobbies">';
     Table_Hobbies += '<tbody>';
-
     var rückgabewerte = TabelleninhaltFuellen(Table_Hobbies, temp_list_Hobbies, 'Hobbies');
-
     Table_Hobbies += rückgabewerte[0];
     temp_list_Hobbies = rückgabewerte[1];
 
     Table_Hobbies += '</tbody></table>';
 
-    // Tabelle mit innerHTML setzen
+    // Tabellen in HTML-DIV-Elementen platzieren.
     document.getElementById('DIV_Table_Informatik').innerHTML = Table_Informatik;
     document.getElementById('DIV_Table_Design').innerHTML = Table_Design;
     document.getElementById('DIV_Table_Hobbies').innerHTML = Table_Hobbies;
-
-    //addClickListenerToTableRows();
+    // Die Tabellen wurden in den DIV-Block platziert
 }
 
+// Funktion zum Füllen der Tabelle für eine bestimmte Kategorie.
 function TabelleninhaltFuellen(Tabelle, temp_list, tablename) {
 
     faehigkeiten.forEach(function (item) {
         if (item.Kategorie === tablename) {
+            // Eine Zeile für jede Fähigkeit erstellen.
             Tabelle += '<tr>';
             Tabelle += '<td>' + item.name + '</td><td><div class="star-rating">';
 
+            // Sterne für die Bewertung der Fähigkeit hinzufügen.
             for (i = 0; i < 5; i++) {
                 if (i < item.stars) {
                     Tabelle += '<label class="checked"></label>';
@@ -84,28 +83,10 @@ function TabelleninhaltFuellen(Tabelle, temp_list, tablename) {
         }
     });
 
+    // Rückgabewerte für die aktualisierte Tabelle und die temp_list zurückgeben.
     return [Tabelle, temp_list];
 
 }
 
-/*function addClickListenerToTableRows() {
-    var tbody = document.getElementById('Table_Informatik').getElementsByTagName('tbody')[0];
-
-    if (tbody) {
-        tbody.addEventListener('click', function (event) {
-            var target = event.target;
-            while (target && target.tagName !== 'TR') {
-                target = target.parentNode;
-            }
-
-            if (target) {
-                var index = target.rowIndex; // Der Header wird nicht gezählt
-                alert('Name: ' + temp_list_Informatik[index].name + ', Sterne: ' + temp_list_Informatik[index].stars);
-            }
-        });
-    } else {
-        console.error('tbody-Element nicht gefunden.');
-    }
-}*/
-
+// Funktion zum Erstellen und Anzeigen der Tabellen beim Laden der Seite.
 createTable();

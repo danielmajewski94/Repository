@@ -2,7 +2,13 @@
 <html lang="en">
 
 <head>
+    <!-- Codierung der HTML-Datei in UTF-8 -->
     <meta charset="UTF-8">
+    <!--
+        viewport-Meta-Tag: Die Darstellung und das Verhalten der Webseite auf verschiedenen Geräten zu steuern, insbesondere auf mobilen Geräten.
+        width=device-width: Breite des Viewports wird auf die Breite des Geräts eingestellt.
+        initial-scale=1.0: Legt den initialen Zoom-Faktor der Webseite fest. Wert 1.0 bedeutet Standardgröße.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lebenslauf</title>
     <link rel="stylesheet" href="style.css">
@@ -11,18 +17,20 @@
 <body>
     <header>
         <div>
+            <!-- Die Navigationsbar mit dem Hamburger-Icon wird erstellt. &#9776; ist der Uni-Code für das Hamburger-Icon -->
             <nav class="navbar">
                 <div class="navbar-toggle">&#9776;</div>
             </nav>
         </div>
-        <div class="grid-container">
-            <div></div>
+        <div>
+            <!-- Überschriften in verschiedenen Größen h1 und h3 -->
             <div id="Kurzbeschreibung">
                 <h1>Daniel Majewski</h1>
                 <h3>Fachinformatiker - Anwendungsentwicklung</h3>
             </div>
         </div>
         <div>
+            <!-- Die Navigationsbar mit Aufruf einer Methode aus dem JavaScript-Skript -->
             <nav class="navbar">
                 <ul class="navbar-menu">
                     <li><a onclick="ChangeFrame('Startseite.html')">Startseite</a></li>
@@ -34,21 +42,31 @@
             </nav>
         </div>
     </header>
+    <!-- Das iFrame. Lädt standardmäßig die Startseite. Hat eine Höhe und Breite von 100 % der verfügbaren Breite -->
     <iframe src="Startseite.html" width="100%" height="100%" title="Einbetten einer Webseite"
         id="ContentFrame"></iframe>
     <footer>
+        <!-- GridLayout wird nur im Footer definiert -->
         <div class="grid-container">
-            <div id="Mail">daniel.majewski@iu-study.org</div>
-            <div>
+            <!-- Eine Zelle mit der Mail-Adresse -->
+            <div id="Mail" class="cell">daniel.majewski@iu-study.org</div>
+            <!-- Eine Zelle mit Buttons für Mail, Telefon und Social-Media in Form von Buttons -->
+            <div class="cell">
                 <img src="Image/icon_tel.png" alt="Telefon" class="Icon">
                 <img src="Image/icon_mail.png" alt="Mail" class="Icon">
                 <img src="Image/icon_fb.png" alt="Facebook" class="Icon">
             </div>
-            <div id="Adresse">Am Madenbach 19<br>97708 Bad Bocklet<br>Deutschland</div>
+            <!-- Eine Zelle mit der Adresse -->
+            <div id="Adresse" class="cell">Am Madenbach 19<br>97708 Bad Bocklet<br>Deutschland</div>
         </div>
     </footer>
 
+    <!-- Aufruf der JavaScript-Datei script.js -->
     <script src="script.js"></script>
 </body>
 
 </html>
+
+<!--
+    Die Index-Datei legt das Grundlayout der Website fest. Sie beinhaltet den Header mit der Navigationsbar, den Footer und einen iFrame. Das iFrame öffnet den Inhalt der einzelnen HTML-Dateien. Bei klick auf den Items der Navigationsbar wird der Inhalt des iFrames neu geladen. Dafür sorgt die Methode ChangeFrame('HTML_Datei.html') im Skript der JavaScript-Datei.
+-->

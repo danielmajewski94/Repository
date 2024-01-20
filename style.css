@@ -53,51 +53,58 @@ body {
     margin: 0;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* Drei Spalten: eine Fraktion, zwei Fraktionen, eine Fraktion */
-    grid-template-rows: repeat(2, auto);
-    /* Automatische Höhe für die Zeilen */
-    gap: 20px;
-    /* Abstand zwischen den Zellen */
-    padding: 20px;
-}
-
-.grid-container-zwei-Spalten {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* Drei Spalten: eine Fraktion, zwei Fraktionen, eine Fraktion */
-    grid-template-rows: repeat(2, auto);
-    /* Automatische Höhe für die Zeilen */
-    gap: 20px;
-    /* Abstand zwischen den Zellen */
-    padding: 20px;
-}
-
-.cell {
-    padding: 5px;
-}
-
-.cell-1 {
-    grid-column: span 2;
-}
-
-.cell-2 {
-    grid-row: span 2;
-}
-
-.cell-3 {
-    grid-column: span 3;
-}
-
 header {
     grid-column: span 3;
-    /* Spanne über alle drei Spalten */
     color: black;
     padding: 10px;
     text-align: center;
 }
+
+/* Start: GridLayout */
+/* Formatierung des Gridlayouts. Das Gridlayout wird auf 3 Spalten ausgelegt. */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    /* Automatische Höhe für die Zeilen */
+    gap: 20px;
+    /* Abstand zwischen den Zellen */
+    padding: 20px;
+}
+
+/* Formatierung des Gridlayouts. Das Gridlayout wird auf 2 Spalten ausgelegt. */
+.grid-container-zwei-Spalten {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    /* Automatische Höhe für die Zeilen */
+    gap: 20px;
+    /* Abstand zwischen den Zellen */
+    padding: 20px;
+}
+
+/* Definiert eine Zelle und besitzt einen inneren Abstand von 5 Pixeln */
+.cell {
+    padding: 5px;
+}
+
+/* Verbindet zwei Zellen vertikal miteinander */
+.cell-1 {
+    grid-column: span 2;
+}
+
+/* Verbindet zwei Zellen horizontal miteinander */
+.cell-2 {
+    grid-row: span 2;
+}
+
+/* Verbindet drei Zellen vertikal miteinander */
+.cell-3 {
+    grid-column: span 3;
+}
+
+/* Ende: GridLayout */
+
 
 #Portrait {
     width: 150pt;
@@ -129,23 +136,28 @@ header {
     text-align: left;
 }
 
-/*Navigation*/
+/* Start: Navigation */
 /* CSS-Stil für die nebeneinander angeordnete Liste */
 .navbar {
     list-style-type: none;
     display: flex;
-    justify-content: space-between;
+    /* Es wird ein FlexLayout auf der Navigationsleiste verwendet. Alle Elemente werden nebeneinander gesetzt. */
+    justify-content: center;
+    /* Steuert die AUsrichtung der Flex-Elemente: zentriert */
     align-items: center;
+    /* Die Objekte sind zentriert */
     padding: 0px;
+    /* Kein innerer Zellenabstand */
     /*color: white;*/
     font-size: 20pt;
-    justify-content: center;
+    align-content: center;
 }
 
 .navbar-logo {
     font-size: 24px;
 }
 
+/* Die Navigationsleiste wird vertikal angeordnet. Ein Zellen und Zeilenabstand wurde auf 0 gesetzt */
 .navbar-menu {
     list-style-type: none;
     margin: 0;
@@ -153,17 +165,20 @@ header {
     display: flex;
 }
 
+/* Die Schrift der Menu-Items wird definiert */
 .navbar-menu li {
     margin-right: 20px;
     font-size: 24pt;
 }
 
+/* Die Schrift der Menu-Items wird definiert */
 .navbar-menu a {
     text-decoration: none;
     /*color: white;*/
     font-size: 20pt;
 }
 
+/* Das Hamburger-Icon wird formatiert. Bei Desktop-Bildschirmgröße ist dieses ausgeblendet. Der Curosr wird verändert, sobald sich der Mauszeiger darüber befindet. */
 .navbar-toggle {
     font-size: 24px;
     cursor: pointer;
@@ -175,10 +190,9 @@ header {
 .horizontal-list li {
     margin-right: 100px;
     font-size: 16pt;
-    /* Abstand zwischen den Listenelementen anpassen */
 }
 
-/* CSS-Stil für die Sterne */
+/* Start: CSS-Stil für die Sterne */
 .star-rating {
     font-size: 0;
     white-space: nowrap;
@@ -190,7 +204,7 @@ header {
     /* Größe der Sterne anpassen */
     padding: 5px;
     cursor: not-allowed;
-    /* Zeige an, dass die Sterne nicht auswählbar sind */
+    /* Die Sterne  sind nicht auswählbar */
     display: inline-block;
     color: #ddd;
     /* Standardfarbe der Sterne */
@@ -208,7 +222,9 @@ header {
     /* Farbe der ausgewählten Sterne */
 }
 
+/* Ende: Sterne */
 
+/* Dien Größe der Bilder auf der Ausbildung.html wird festgelegt. */
 .image_study {
     width: 60%;
     height: 40%;
@@ -221,53 +237,21 @@ header {
     object-fit: fill;
 }
 
+/* Ein Rahmen auf gewisse Elemente wird gesetzt */
 .border {
     border: 1px solid #ccc;
 }
 
 
-
-
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-
-
-/*Bildschirmkompatibilität*/
+/* Bildschirmkompatibilität */
+/* Ab <= 740 Pixel */
 
 @media screen and (max-width: 740px) {
 
     .grid-container {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        /* Drei Spalten: eine Fraktion, zwei Fraktionen, eine Fraktion */
+        /* Zwei Spalten: eine Fraktion, zwei Fraktionen, eine Fraktion */
         grid-template-rows: auto;
         /* Automatische Höhe für die Zeilen */
         gap: 20px;
@@ -278,7 +262,7 @@ header {
     .grid-container-zwei-Spalten {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        /* Drei Spalten: eine Fraktion, zwei Fraktionen, eine Fraktion */
+        /* Zwei Spalten: eine Fraktion, zwei Fraktionen, eine Fraktion */
         grid-template-rows: auto;
         /* Automatische Höhe für die Zeilen */
         gap: 20px;
@@ -337,6 +321,8 @@ header {
     }
 }
 
+/* Ab <= 450 Pixel */
+
 @media screen and (max-width: 450px) {
 
     .grid-container {
@@ -361,15 +347,18 @@ header {
         padding: 20px;
     }
 
-    /* Beispiel: Verbindung von Zellen */
+    /* Verbindung von Zellen */
+    /* Verbindung einer Zelle horizontal */
     .cell-1 {
         grid-column: span 1;
     }
 
+    /* Verbindung einer Zelle vertikal */
     .cell-2 {
         grid-row: span 1;
     }
 
+    /* Verbindung einer Zelle horizontal, falls 3 Zellen miteinander Verbunden wurden, werden nun nur noch zwei Zellen miteinander Verbunden */
     .cell-3 {
         grid-column: span 1;
     }

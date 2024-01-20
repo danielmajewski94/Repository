@@ -2,14 +2,22 @@
 <html lang="en">
 
 <head>
+    <!-- Codierung der HTML-Datei in UTF-8 -->
     <meta charset="UTF-8">
+    <!--
+        viewport-Meta-Tag: Die Darstellung und das Verhalten der Webseite auf verschiedenen Geräten zu steuern, insbesondere auf mobilen Geräten.
+        width=device-width: Breite des Viewports wird auf die Breite des Geräts eingestellt.
+        initial-scale=1.0: Legt den initialen Zoom-Faktor der Webseite fest. Wert 1.0 bedeutet Standardgröße.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lebenslauf</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body style="background-color: white;">
+    <!-- GridLayout wird definiert -->
     <div class="grid-container">
+        <!-- Eine Zelle vertikal mit einer anderen Zelle verbunden. Besitzt einen Rahmen. Inhalt: Eine Überschrift in h1, ein zugehöriger Text und ein Bild -->
         <div class="cell cell-2 border">
             <section>
                 <h1>Über mich</h1>
@@ -20,6 +28,7 @@
                 <img src="Image/Portrait.jpg" alt="Protrait" id="Portrait">
             </div>
         </div>
+        <!-- Eine Zelle im GridLayout mit einen Rahmen. Inhalt: Überschrift in h1 und ein Text -->
         <div class="cell border">
             <section>
                 <h1>Ausbildungslaufbahn</h1>
@@ -30,6 +39,7 @@
                 </p>
             </section>
         </div>
+        <!-- Eine Zelle im GridLayout mit einen Rahmen. Inhalt: Eine Überschrift in h1 und eine Tabelle mit zwei Spalten. Erste Spalte ein Begriff, zweite Spalte Rating-System mit Sternen -->
         <div class="cell border">
             <section>
                 <h1>Fähigkeiten</h1>
@@ -38,6 +48,7 @@
                         <tr>
                             <td>Java</td>
                             <td>
+                                <!-- Ein Div-Block darin 5 Sterne. In diesen Fall sind 3 Sterne gelb (class="checked") und zwei Sterne sind Weiß -->
                                 <div class="star-rating">
                                     <label class="checked"></label>
                                     <label class="checked"></label>
@@ -99,6 +110,7 @@
                 </table>
             </section>
         </div>
+        <!-- Eine Zelle im GridLayout mit einen Rahmen. Inhalt: Eine Überschrift in h1 mit Text -->
         <div class="cell cell-1 border">
             <section>
                 <h1>Mein Arbeitgeber</h1>
