@@ -1,13 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
+    <!-- Codierung der HTML-Datei in UTF-8 -->
     <meta charset="UTF-8">
+    <!--
+        viewport-Meta-Tag: Die Darstellung und das Verhalten der Webseite auf verschiedenen Geräten zu steuern, insbesondere auf mobilen Geräten.
+        width=device-width: Breite des Viewports wird auf die Breite des Geräts eingestellt.
+        initial-scale=1.0: Legt den initialen Zoom-Faktor der Webseite fest. Wert 1.0 bedeutet Standardgröße.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lebenslauf</title>
+    <!-- Verknüpfung der CSS-Datei -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <section>
+        <h1>Bei Fragen.</h1>
+        <h4>Kontaktiere mich gerne!</h4>
+    </section>
+    <label for="Vorname">Vorname:</label><br>
+    <input type="text" id="Vorname" class="Textfeld"><br>
+    <label for="Nachname">Nachname:</label><br>
+    <input type="text" id="Nachname" class="Textfeld"><br>
+    <label for="E-Mail">E-Mail:</label><br>
+    <input type="text" id="E-Mail" class="Textfeld"><br>
+    <label for="Betreff">Betreff:</label><br>
+    <input type="text" id="Betreff" class="Textfeld"><br><br>
+    <textarea type="text" id="Brieftext" class="Textarea" rows="9" cols="200"
+        placeholder="Schreibe mir eine Nachricht..."></textarea><br>
 
 </body>
 
