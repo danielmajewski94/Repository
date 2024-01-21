@@ -2,12 +2,63 @@
 <html lang="en">
 
 <head>
+    <!-- Codierung der HTML-Datei in UTF-8 -->
     <meta charset="UTF-8">
+    <!--
+        viewport-Meta-Tag: Die Darstellung und das Verhalten der Webseite auf verschiedenen Geräten zu steuern, insbesondere auf mobilen Geräten.
+        width=device-width: Breite des Viewports wird auf die Breite des Geräts eingestellt.
+        initial-scale=1.0: Legt den initialen Zoom-Faktor der Webseite fest. Wert 1.0 bedeutet Standardgröße.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lebenslauf</title>
+    <!-- Verknüpfung der CSS-Datei -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- GridLayout wird definiert -->
+    <div class="grid-container">
+        <!-- Eine Zelle vertikal mit einer anderen Zelle verbunden. Besitzt einen Rahmen. Inhalt: Eine Überschrift in h1, ein zugehöriger Text und ein Bild -->
+        <div class="cell cell-2 border">
+            <section>
+                <h1>Über mich</h1>
+                <p>Hier Steht Zeug über mich</p>
+            </section>
+
+            <div id="Portraitimage">
+                <img src="Image/Portrait.jpg" alt="Protrait" id="Portrait">
+            </div>
+        </div>
+        <!-- Eine Zelle vertikal mit einer anderen Zelle verbunden. Besitzt einen Rahmen. Inhalt: Eine Überschrift in h1, ein zugehöriger Text -->
+        <div class="cell border">
+            <section>
+                <h1>Meine Fotografie</h1>
+                <p>Hier Steht Zeug über meine Fotografie<br><a href="https://www.majewski-fotografie.de/"
+                        target="_blank">https://www.majewski-fotografie.de/</a></p>
+            </section>
+        </div>
+        <!-- Eine Zelle vertikal mit einer anderen Zelle verbunden. Besitzt einen Rahmen. Inhalt: Eine Überschrift in h1, ein zugehöriger Text -->
+        <div class="cell border">
+            <section>
+                <h1>Meine Interessen</h1>
+                <p>Hier Steht Zeug über meine Interessen</p>
+            </section>
+        </div>
+        <!-- Eine Zelle vertikal mit einer anderen Zelle verbunden. Besitzt einen Rahmen. Inhalt: Eine Überschrift in h1, ein zugehöriger Text -->
+        <div class="cell border">
+            <section>
+                <h1>Mein Arbeitgeber</h1>
+                <p>Hier Steht Zeug über mein Arbeitgeber</p>
+            </section>
+        </div>
+        <!-- Eine Zelle vertikal mit einer anderen Zelle verbunden. Besitzt einen Rahmen. Inhalt: Eine Überschrift in h1, ein zugehöriger Text -->
+        <div class="cell border">
+            <section>
+                <h1>Meine Familie</h1>
+                <p>Hier Steht Zeug über meinen Familienstand</p>
+            </section>
+        </div>
+    </div>
 
 </body>
 

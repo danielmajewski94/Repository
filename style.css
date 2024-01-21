@@ -85,7 +85,7 @@ header {
 
 /* Definiert eine Zelle und besitzt einen inneren Abstand von 5 Pixeln */
 .cell {
-    padding: 5px;
+    padding: 10px;
 }
 
 /* Verbindet zwei Zellen vertikal miteinander */
