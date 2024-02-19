@@ -1,3 +1,5 @@
+var aktuelleSeite = "Startseite.html";
+
 // Diese Funktion wird ausgeführt, wenn das DOM vollständig geladen ist.
 document.addEventListener('DOMContentLoaded', function () {
     // Sucht das Toggle-Button-Element und das Menü-Element in der Navbar.
@@ -11,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Erstellt ein Media Query-Objekt für Bildschirmbreiten bis 450px.
-var mediaQuery = window.matchMedia("(max-width: 450px)");
+var mediaQuery = window.matchMedia("(max-width: 580px)");
 
 // Diese Funktion wird aufgerufen, wenn sich die Bildschirmbreite ändert.
 function handleMediaChange() {
@@ -36,6 +38,7 @@ mediaQuery.addListener(handleMediaChange);
 
 // Diese Funktion ändert die Quelle des ContentFrames auf die übergebene Datei.
 function ChangeFrame(Datei) {
+    aktuelleSeite = Datei;
+    console.log(aktuelleSeite);
     document.getElementById('ContentFrame').src = Datei;
 }
-/* */

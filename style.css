@@ -8,14 +8,22 @@ body {
 }
 
 h1 {
-    font-family: Arial;
     margin: 0pt;
+    color: rgb(5, 3, 136);
+    font-family: Indie Flower;
+    font-size: 26pt;
     color: rgb(5, 3, 136);
 }
 
 h3 {
-    font-family: Arial;
     margin-bottom: 0pt;
+    color: rgb(5, 3, 136);
+    font-family: Indie Flower;
+    font-size: 20pt;
+    color: rgb(5, 3, 136);
+}
+
+strong {
     color: rgb(5, 3, 136);
 }
 
@@ -37,7 +45,6 @@ td {
 }
 
 footer {
-    /*position: sticky;*/
     bottom: 0;
     grid-column: span 3;
     /* Spanne über alle drei Spalten */
@@ -73,6 +80,17 @@ header {
 
 /* Formatierung des Gridlayouts. Das Gridlayout wird auf 2 Spalten ausgelegt. */
 .grid-container-zwei-Spalten {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    /* Automatische Höhe für die Zeilen */
+    gap: 20px;
+    /* Abstand zwischen den Zellen */
+    padding: 20px;
+}
+
+/* Formatierung des Gridlayouts. Das Gridlayout wird auf 2 Spalten ausgelegt. */
+.grid-container-header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -118,6 +136,10 @@ header {
 
 #Kurzbeschreibung {
     align-content: start;
+    font-family: Indie Flower;
+    font-size: 50pt;
+    color: rgb(5, 3, 136);
+    white-space: nowrap;
 }
 
 #Portraitimage {
@@ -141,6 +163,7 @@ header {
 
 .mousehover:hover {
     color: rgb(5, 3, 136);
+    font-family: Indie Flower;
     font-weight: 700;
 }
 
@@ -150,7 +173,7 @@ header {
     list-style-type: none;
     display: flex;
     /* Es wird ein FlexLayout auf der Navigationsleiste verwendet. Alle Elemente werden nebeneinander gesetzt. */
-    justify-content: center;
+    justify-content: right;
     /* Steuert die Ausrichtung der Flex-Elemente: zentriert */
     padding: 0px;
     /* Kein innerer Zellenabstand */
@@ -190,6 +213,11 @@ header {
     font-size: 24px;
     cursor: pointer;
     display: none;
+}
+
+.navbar-flex {
+    display: flex;
+    justify-content: flex-end;
 }
 
 /*Ende Navigation*/
@@ -278,12 +306,21 @@ header {
         padding: 20px;
     }
 
+    .grid-container-header {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        /* Die erste Spalte ist jetzt doppelt so breit wie die zweite Spalte */
+        grid-template-rows: repeat(2, auto);
+        gap: 20px;
+        padding: 20px;
+    }
+
     header {
         grid-column: span 2;
         /* Spanne über alle drei Spalten */
         color: black;
         padding: 10px;
-        text-align: center;
+        text-align: left;
     }
 
     footer {
@@ -299,11 +336,47 @@ header {
     .navbar-menu {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
+        position: fixed;
+        top: 0px;
         left: 0;
-        width: 100%;
-        background-color: #333;
+        width: 80%;
+        height: 100vh;
+        color: white;
+        background-color: rgb(159, 173, 255);
+        z-index: 1;
+        /* Damit das Menü über dem Inhalt liegt */
+        transition: height 3s ease;
+        /* CSS-Transition für die Höhe mit 0.3s Dauer und 'ease' Beschleunigungsfunktion */
+    }
+
+    /* Animation beim Öffnen */
+    @keyframes slideIn {
+        from {
+            height: 0;
+        }
+
+        to {
+            height: 100vh;
+        }
+    }
+
+    /* Animation beim Schließen */
+    @keyframes slideOut {
+        from {
+            height: 100vh;
+        }
+
+        to {
+            height: 0;
+        }
+    }
+
+    .navbar-menu.show {
+        animation: slideIn 1s ease forwards;
+    }
+
+    .navbar-menu.hide {
+        animation: slideOut 1s ease forwards;
     }
 
     .navbar-menu.show {
@@ -318,6 +391,7 @@ header {
 
     .navbar-toggle {
         display: block;
+        cursor: pointer;
     }
 
     h1 {
@@ -376,7 +450,6 @@ header {
         /* Spanne über alle drei Spalten */
         color: black;
         padding: 10px;
-        text-align: center;
     }
 
     footer {
@@ -385,6 +458,14 @@ header {
         color: black;
         padding: 10px;
         text-align: center;
+    }
+
+    #Kurzbeschreibung {
+        align-content: start;
+        font-family: Indie Flower;
+        font-size: 30pt;
+        color: rgb(5, 3, 136);
+        white-space: nowrap;
     }
 
 }
