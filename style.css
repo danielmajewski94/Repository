@@ -51,6 +51,7 @@ footer {
     color: black;
     padding: 10px;
     text-align: center;
+    background: linear-gradient(to bottom, #ffffff, rgba(5, 3, 136, 0.205));
 }
 
 body {
@@ -64,6 +65,8 @@ header {
     grid-column: span 3;
     color: black;
     padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to top, #ffffff, rgba(5, 3, 136, 0.205));
 }
 
 /* Start: GridLayout */
@@ -149,6 +152,7 @@ header {
 .Icon {
     width: 25pt;
     height: 25pt;
+    cursor: pointer;
 }
 
 #Adresse {
@@ -165,6 +169,7 @@ header {
     color: rgb(5, 3, 136);
     font-family: Indie Flower;
     font-weight: 700;
+    cursor: pointer;
 }
 
 /* Start: Navigation */
@@ -206,6 +211,7 @@ header {
     text-decoration: none;
     /*color: white;*/
     font-size: 15pt;
+    white-space: nowrap;
 }
 
 /* Das Hamburger-Icon wird formatiert. Bei Desktop-Bildschirmgröße ist dieses ausgeblendet. Der Curosr wird verändert, sobald sich der Mauszeiger darüber befindet. */
